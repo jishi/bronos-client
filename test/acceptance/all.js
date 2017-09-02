@@ -10,6 +10,7 @@ describe('when we have a web socket server', () => {
   let wsServer;
   let httpServer;
   let connectSpy;
+  let socket;
 
   before(() => {
     wsServer = io(8080, {
@@ -18,16 +19,21 @@ describe('when we have a web socket server', () => {
   });
 
   before(() => {
-    httpServer = http.createServer();
+    httpServer = http.createServer((req, res) => {
+      res.end('{ "status": "success" }');
+    });
     httpServer.listen(8081);
   });
 
   before(() => {
     config.httpApiBaseUri = 'http://localhost:8081';
+    config.brokerEndpoint = 'http://localhost:8080';
   });
 
   beforeEach(() => {
-    connectSpy = sinon.spy();
+    connectSpy = sinon.spy((_socket) => {
+      socket = _socket;
+    });
     wsServer.on('connect', connectSpy);
   });
 
@@ -42,19 +48,21 @@ describe('when we have a web socket server', () => {
     afterEach(() => app.stop());
 
     it('should connect to server', async () => {
-      expect(connectSpy.callCount).to.equal(1);
+      expect(connectSpy).to.be.calledOnce;
     });
 
     describe('when server sends an action', () => {
-      it('should invoke action against configured endpoint', (done) => {
+      it.only('should invoke action against configured endpoint', (done) => {
         httpServer.on('request', (req, res) => {
           expect(req.url).to.equal('/foo/bar');
           res.end();
-          done();
         });
 
-        wsServer.emit('invoke', {
+        socket.emit('invoke', {
           action: '/foo/bar',
+        }, (ack) => {
+          expect(ack).to.eql({ status: 'success' });
+          done();
         });
       });
     });
