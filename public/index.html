@@ -18,18 +18,33 @@
             vertical-align: middle;
             display: table-cell;
         }
+
+        .buttons {
+            position: absolute;
+            margin: 1em;
+        }
     </style>
 </head>
 <body>
-    <div id="base-url">Your baseURL: https://broker.bronos.net/v1/<span id="token"></span></div>
-    <script>
-        fetch('/token')
-          .then((res) => {
-            return res.text();
-          })
-          .then((token) => {
-            document.getElementById('token').textContent = token;
-          });
-    </script>
+<div class="buttons">
+    <a class="button" href="https://www.paypal.me/jishi" title="Donate once-off to this project using Paypal"><img
+            src="https://camo.githubusercontent.com/11b2f47d7b4af17ef3a803f57c37de3ac82ac039/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f70617970616c2d646f6e6174652d79656c6c6f772e737667"
+            alt="PayPal donate button" data-canonical-src="https://img.shields.io/badge/paypal-donate-yellow.svg"
+            style="max-width:100%;"></a>
+    <a href="https://gitter.im/node-sonos-http-api/Lobby" title="Need assistance? Join the chat at Gitter.im"><img
+            src="https://camo.githubusercontent.com/478106eae8f67dc9739579be60e7addaaa837da7/68747470733a2f2f696d672e736869656c64732e696f2f6769747465722f726f6f6d2f6261646765732f736869656c64732e737667"
+            alt="Join the chat at gitter" data-canonical-src="https://img.shields.io/gitter/room/badges/shields.svg"
+            style="max-width:100%;"></a>
+</div>
+<div id="base-url">Your baseURL: https://broker.bronos.net/v1/<span id="token"></span></div>
+<script>
+  fetch('/token')
+    .then((res) => {
+      return res.text();
+    })
+    .then((token) => {
+      document.getElementById('token').textContent = token;
+    });
+</script>
 </body>
 </html>
