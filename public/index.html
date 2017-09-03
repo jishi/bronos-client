@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bronos</title>
+    <link href="//fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto Mono', monospace;
+            margin: 0;
+            height: 100vh;
+        }
+
+        #base-url {
+            height: 100vh;
+            width: 100vw;
+            text-align: center;
+            vertical-align: middle;
+            display: table-cell;
+        }
+    </style>
+</head>
+<body>
+    <div id="base-url">Your baseURL: https://broker.bronos.net/v1/<span id="token"></span></div>
+    <script>
+        fetch('/token')
+          .then((res) => {
+            return res.text();
+          })
+          .then((token) => {
+            document.getElementById('token').textContent = token;
+          });
+    </script>
+</body>
+</html>

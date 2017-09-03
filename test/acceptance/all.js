@@ -26,7 +26,7 @@ describe('when we have a web socket server', () => {
   });
 
   before(() => {
-    config.httpApiBaseUri = 'http://localhost:8081';
+    config.sonosApiBaseUri = 'http://localhost:8081';
     config.brokerEndpoint = 'http://localhost:8080';
   });
 
@@ -52,7 +52,8 @@ describe('when we have a web socket server', () => {
     });
 
     describe('when server sends an action', () => {
-      it.only('should invoke action against configured endpoint', (done) => {
+
+      it('should invoke action against configured endpoint', (done) => {
         httpServer.on('request', (req, res) => {
           expect(req.url).to.equal('/foo/bar');
           res.end();

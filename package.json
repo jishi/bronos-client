@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "node-fetch": "^1.7.2",
+    "node-static": "^0.7.9",
     "socket.io-client": "^2.0.3"
   },
   "devDependencies": {
