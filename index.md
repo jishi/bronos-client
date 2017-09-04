@@ -4,7 +4,7 @@ Simple IFTTT support for Sonos
 
 ## Easiest installation (with raspberry pi)
 
-Download the pre-compiled SD-card image and install on an SD-card (at least 2 GB). For windows, use [Win32DiskImager](https://sourceforge.net/projects/win32diskimager/), for MacOS, you can use the builtin `dd` command (see [instructions](http://elinux.org/RPi_Easy_SD_Card_Setup)).
+Download the pre-compiled [SD-card image](https://github.com/jishi/bronos-client/releases/download/v0.0.3/bronos-client-0.0.3.img.gz) and install on an SD-card (at least 2 GB). For windows, use [Win32DiskImager](https://sourceforge.net/projects/win32diskimager/), for MacOS, you can use the builtin `dd` command (see [instructions](http://elinux.org/RPi_Easy_SD_Card_Setup)).
 
 Put the newly written SD-card into your raspberry pi (works with Raspberry Pi B, 2 and 3). Connect it via network cable to your router and plug in power.
 
