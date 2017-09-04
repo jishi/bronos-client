@@ -1,1 +1,5 @@
 theme: jekyll-theme-slate
+title: Bronos
+description: Simple IFTTT support for Sonos (or just general internet bridging of commands)
+show_downloads: false
+google_analytics: UA-105777784-1
