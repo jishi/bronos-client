@@ -1,6 +1,6 @@
 # Bronos
 
-[Examples]('/examples') [IFTTT guide]('/ifttt')
+[Examples](/examples) [IFTTT guide](/ifttt)
 
 Simple IFTTT support for Sonos
 
