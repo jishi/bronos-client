@@ -1,3 +1,5 @@
+[![PayPal donate button](https://img.shields.io/badge/paypal-donate-yellow.svg)](https://www.paypal.me/jishi "Donate once-off to this project using Paypal") [![Join the chat at gitter](https://img.shields.io/gitter/room/badges/shields.svg)](https://gitter.im/node-sonos-http-api/Lobby "Need assistance? Join the chat at Gitter.im")
+
 # Bronos
 
 [Examples](/examples) [IFTTT guide](/ifttt)
