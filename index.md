@@ -29,3 +29,21 @@ Make sure you have node.js 7.10 or higher installed!
 Clone the latest version from git with `git clone https://github.com/jishi/bronos-client.git`
 
 `cd bronos-client` to move into the newly created folder. `npm install --production` to download all dependencies, then start it with `npm start`.
+
+## How does it work?
+
+![network diagram](/bronos-diagram.png "Network diagram")
+
+A local device on your network, bridges commands aimed for your Sonos over a secure, encrypted link. A random identifier (let's call it a token) uniquely identifies your system and forwards the commands to your local network. This mitigates the need for setting up a dynamic hostname (because of dynamic IP allocations to your router), port forwarding to allow internet requests against a local [https://github.com/jishi/node-sonos-http-api](API).
+
+## What can I use it for?
+
+The primary target is to get robust IFTTT support without having to be a network engineer. This enables both easy support for Amazon echo (Alexa) as well as Google Assistant (Home). However, it's not limited to this, because it gives you public, internet facing endpoints for any application to utilize. Slack webhooks, Stringify, anything that can send customizable http requests could benefit from this.
+
+## Is it secure?
+
+The only traffic that is allowed through are raw commands against the API, and nothing else on your local network. The traffic between your network and the Bronos cloud system is encrypted, as is the traffic from any third-party system interacting with the Bronos cloud system. The Bronos cloud system has restricted access through industry standard firewalls and it's only purpose is to bridge commands for your Sonos system. I have worked in the IT industry for over 17 years and have a fairly good understanding of network security and best practises. However, disclaimer, the service is provided as is.
+
+## Does it cost money?
+
+Not for the time being. I do plan on charging some money for it in the future, mainly to finance the costs that comes with running public systems like this, but also to enable the availability one would expect, and also making sure latency is low enough all around the world. This require brokers in multiple datacenters and geograhical routing, which comes at a cost.
