@@ -34,7 +34,7 @@ Clone the latest version from git with `git clone https://github.com/jishi/brono
 
 ![network diagram](/bronos-diagram.png "Network diagram")
 
-A local device on your network, bridges commands aimed for your Sonos over a secure, encrypted link. A random identifier (let's call it a token) uniquely identifies your system and forwards the commands to your local network. This mitigates the need for setting up a dynamic hostname (because of dynamic IP allocations to your router), port forwarding to allow internet requests against a local [https://github.com/jishi/node-sonos-http-api](API), but also the requirement to secure such an endpoint (like SSL certificates and basic auth). Basically, you don't have to be a network engineer to get this going.
+A local device on your network, bridges commands aimed for your Sonos over a secure, encrypted link. A random identifier (let's call it a token) uniquely identifies your system and forwards the commands to your local network. This mitigates the need for setting up a dynamic hostname (because of dynamic IP allocations to your router), port forwarding to allow internet requests against a local [API](https://github.com/jishi/node-sonos-http-api), but also the requirement to secure such an endpoint (like SSL certificates and basic auth). Basically, you don't have to be a network engineer to get this going.
 
 ## What can I use it for?
 
